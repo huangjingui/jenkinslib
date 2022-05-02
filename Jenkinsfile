@@ -1,10 +1,9 @@
 #!groovy
 @Library('jenkinslib') _
-def tools = new org.devops.tools()
+def tools =new org.devops.tools()
 
 pipeline{
    agent  any
-   
    options {
       timestamps()               // 日志会有时间.
       skipDefaultCheckout()            // 删除隐式checkout scm语句
@@ -38,7 +37,7 @@ pipeline{
             timeout(time:30,unit:"MINUTES"){
                script{
                   println('代码扫描')
-  tools.PrintMessage("this is my lib")
+                  tools.PrintMessage("this is my lib")
                }
             }
          }
